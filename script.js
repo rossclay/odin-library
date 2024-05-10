@@ -17,15 +17,22 @@ function addBookToLibrary(bookName) {
     let bookCount = myLibrary.length
     myLibrary[bookCount] = bookName
 }
-// default value for an example
-const favoriteBook = new Book('No Country For Old Men', 'Cormac McCarthy', 309, 'read')
-addBookToLibrary(favoriteBook)
+
+// some books i've read
+const book1 = new Book('No Country For Old Men', 'Cormac McCarthy', 309, 'read')
+const book2 = new Book('A Clockwork Orange', 'Anthony Burgess', 192, 'read')
+
+addBookToLibrary(book1)
+addBookToLibrary(book2)
 
 let cardContainer = document.querySelector('.card-container')
-let cards = document.querySelectorAll('.card')
 
-// function displayBooks() {
-//     for (books in myLibrary[books]) {
-
-//     }
-// }
+// display all of the books in myLibrary
+function displayBooks() {
+    for (let i = 0; i < myLibrary.length; i++) {
+        let bookCard = document.createElement('div')
+        bookCard.setAttribute('class', 'card')
+        let bookTitle = document.createElement('div')
+        bookTitle.setAttribute('class', 'book-title')
+    }
+}
