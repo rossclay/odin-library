@@ -22,9 +22,9 @@ let addBookBtn = document.querySelector('.add-book-btn')
 // addBookBtn.addEventListener('click', () => addBookToLibrary())
 
 // some books i've read or haven't read
-const book1 = new Book('No Country For Old Men', 'Cormac McCarthy', 309, 'read')
-const book2 = new Book('A Clockwork Orange', 'Anthony Burgess', 192, 'read')
-const book3 = new Book('On The Road', 'Jack Kerouac', 307, 'not read')
+const book1 = new Book('No Country For Old Men', 'Cormac McCarthy', 309, 'Read')
+const book2 = new Book('A Clockwork Orange', 'Anthony Burgess', 192, 'Read')
+const book3 = new Book('On The Road', 'Jack Kerouac', 307, 'Not Read')
 
 addBookToLibrary(book1)
 addBookToLibrary(book2)
@@ -51,7 +51,9 @@ function displayBooks() {
             // whether or not the book has been read, will be displayed via a slider switch. so this requires a little more
             let bookRead = document.createElement('div')
             bookRead.setAttribute('class', 'book-read')
-            bookRead.textContent = 'Read?'
+            let bookReadText = document.createElement('div')
+            bookReadText.setAttribute('class', 'book-read-text')
+            bookReadText.textContent = book.read
             let readSwitch = document.createElement('label')
             readSwitch.setAttribute('class', 'switch')
             let readCheckBox = document.createElement('input')
@@ -68,15 +70,33 @@ function displayBooks() {
             bookCard.appendChild(bookAuthor)
             bookCard.appendChild(bookPages)
             bookCard.appendChild(bookRead)
+            bookRead.appendChild(bookReadText)
             bookRead.appendChild(readSwitch)
             readSwitch.appendChild(readCheckBox)
             readSwitch.appendChild(readSlider)
             cardContainer.appendChild(bookCard)
         }
-
-
     )
 }
 
 // populate the page with our default books
 displayBooks()
+
+// UNDER CONSTRUCTION
+// card functionality
+let bookReadSliders = document.querySelectorAll('.book-read-slider')
+bookReadSliders.forEach((bookReadSlider) => {
+    bookReadSlider.addEventListener('click', () => {
+        let bookReadTexts = document.querySelectorAll('.book-read-text')
+        bookReadTexts.forEach((bookReadText) => {
+            if (bookReadText.textContent === 'Not Read') {
+                bookReadText.textContent = 'Read'
+            }
+            else {
+                bookReadText.textContent = 'Not Read'
+            }
+        })
+    }
+    )
+}
+)
