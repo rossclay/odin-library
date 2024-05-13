@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Library</title>
+    <link type="image/png" sizes="32x32" rel="icon" href="./img/icons8-library-32.png">
     <script type="text/javascript" src="script.js" async></script>
 </head>
 
@@ -28,6 +29,32 @@
         </div>
 
     </div>
+    <dialog class='book-modal'>
+        <fieldset>
+            <legend>Book Information</legend>
+            <div class="form-item">
+                <label for="book-title">Book Title *</label>
+                <input type="text" id="book-title" name="book-title" placeholder="Moby Dick" required>
+            </div>
+            <div class="form-item">
+                <label for="book-author">Author *</label>
+                <input type="text" id="book-author" name="book-author" placeholder="Herman Melville" required>
+            </div>
+            <div class="form-item">
+                <label for="book-pages"># Of Pages</label>
+                <input type="tel" id="book-pages" name="book-pages" placeholder="635">
+            </div>
+            <div class="form-item">
+                <legend>Read?</legend>
+                <input id='read' name='book-read' type='radio' value='Read' />
+                <label for='Read' class='radio-label'>Read</label>
+                <input id='not-read' name='book-read' type='radio' value='Not Read' checked />
+                <label for='Not Read' class='radio-label'>Not Read</label>
+            </div>
+            <button class="submit-modal">Add</button>
+            <button class="close-modal">Close</button>
+    </dialog>
+    </fieldset>
     <button class="add-book-btn">Add Book</button>
 </body>
 
