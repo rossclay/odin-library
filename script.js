@@ -18,9 +18,28 @@ function addBookToLibrary(bookName) {
     myLibrary[bookCount] = bookName
 }
 // allow the user to add books
-let addBookBtn = document.querySelector('.add-book-btn')
-// addBookBtn.addEventListener('click', () => addBookToLibrary())
+const addBookBtn = document.querySelector('.add-book-btn')
+const closeBtn = document.querySelector('.close-modal')
+const bookModal = document.querySelector('.book-modal')
+addBookBtn.addEventListener('click', () =>
+    bookModal.showModal())
 
+closeBtn.addEventListener('click', () =>
+    bookModal.close())
+
+
+// additional feature for closing model when clicking outside of dialog window
+bookModal.addEventListener('click', e => {
+    const dialogDimensions = bookModal.getBoundingClientRect()
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+    ) {
+        bookModal.close()
+    }
+})
 // some books i've read or haven't read
 const book1 = new Book('No Country For Old Men', 'Cormac McCarthy', 309, 'Read')
 const book2 = new Book('A Clockwork Orange', 'Anthony Burgess', 192, 'Read')
@@ -31,6 +50,8 @@ addBookToLibrary(book2)
 addBookToLibrary(book3)
 
 let cardContainer = document.querySelector('.card-container')
+
+
 
 // display all of the books in myLibrary
 function displayBooks() {
@@ -83,7 +104,7 @@ function displayBooks() {
 displayBooks()
 
 // UNDER CONSTRUCTION
-// card functionality
+// card slider functionality
 let bookReadSliders = document.querySelectorAll('.book-read-slider')
 bookReadSliders.forEach((bookReadSlider) => {
     bookReadSlider.addEventListener('click', () => {
