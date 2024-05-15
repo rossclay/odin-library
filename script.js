@@ -21,13 +21,32 @@ function addBookToLibrary(bookName) {
 const addBookBtn = document.querySelector('.add-book-btn')
 const closeBtn = document.querySelector('.close-modal')
 const bookModal = document.querySelector('.book-modal')
+const submitModalBtn = document.querySelector('.submit-modal-btn')
+
 addBookBtn.addEventListener('click', () =>
     bookModal.showModal())
 
 closeBtn.addEventListener('click', () =>
     bookModal.close())
 
+submitModalBtn.addEventListener('click', () => {
+    let newBookTitle = document.querySelector('#book-title').value
+    let newBookAuthor = document.querySelector('#book-author').value
+    let newBookPages = parseInt(document.querySelector('#book-pages').value)
 
+    function readOrUnread() {
+        if (document.querySelector('#read').checked)
+            return 'Read'
+        else if (document.querySelector('#unread').checked)
+            return 'Not read'
+    }
+    let newBookRead = readOrUnread()
+    let newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead)
+    addBookToLibrary(newBook)
+    displayBooks(myLibrary)
+    bookModal.close()
+}
+)
 // additional feature for closing model when clicking outside of dialog window
 bookModal.addEventListener('click', e => {
     const dialogDimensions = bookModal.getBoundingClientRect()
