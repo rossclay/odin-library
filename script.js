@@ -17,6 +17,21 @@ function addBookToLibrary(bookName) {
     let bookCount = myLibrary.length
     myLibrary[bookCount] = bookName
 }
+
+function resetLibrary(library) {
+    library.replaceChildren()
+}
+
+function spliceMyLibrary(object, num) {
+    for (let i = 0; i < object.length; i++) {
+        let index = object.indexOf(num)
+        if (index > -1) {
+            myLibrary.splice(index, 1)
+        }
+    };
+}
+
+
 // allow the user to add books
 const addBookBtn = document.querySelector('.add-book-btn')
 const closeBtn = document.querySelector('.close-modal')
@@ -43,6 +58,7 @@ submitModalBtn.addEventListener('click', () => {
     let newBookRead = readOrUnread()
     let newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead)
     addBookToLibrary(newBook)
+    resetLibrary(cardContainer)
     displayBooks(myLibrary)
     bookModal.close()
 }
@@ -73,10 +89,22 @@ let cardContainer = document.querySelector('.card-container')
 
 
 // display all of the books in myLibrary
-function displayBooks() {
+function displayBooks(myLibrary) {
     myLibrary.forEach(
         (book) => {
-            // populate the book 'cards' with the text from the library. easy enough
+            // delete button functionalityeasy enough
+            let index = myLibrary.indexOf(book)
+            let delBtn = document.createElement('button')
+            delBtn.setAttribute('class', 'del-btn')
+            delBtn.setAttribute('type', 'button')
+            delBtn.textContent = 'X'
+            delBtn.addEventListener('click', () => {
+                spliceMyLibrary(myLibrary, myLibrary[index]);
+                resetLibrary(cardContainer);
+                displayBooks(myLibrary);
+            }
+            )
+            // populate the book 'cards' with the text from the library. 
             let bookCard = document.createElement('div')
             bookCard.setAttribute('class', 'card')
             let bookTitle = document.createElement('div')
@@ -102,10 +130,14 @@ function displayBooks() {
             let readSlider = document.createElement('span')
             readSlider.setAttribute('class', 'slider round')
             // now to determine whether or not the book has been read based on the user input
-            if (book.read === 'read') {
-
+            if (book.read === 'Read') {
+                readSwitch.checked = true
+            }
+            else if (book.read === 'Not Read') {
+                readSwitch.checked = false
             }
             //append children as needed 
+            bookCard.appendChild(delBtn)
             bookCard.appendChild(bookTitle)
             bookCard.appendChild(bookAuthor)
             bookCard.appendChild(bookPages)
@@ -115,12 +147,14 @@ function displayBooks() {
             readSwitch.appendChild(readCheckBox)
             readSwitch.appendChild(readSlider)
             cardContainer.appendChild(bookCard)
+
+
         }
     )
 }
 
 // populate the page with our default books
-displayBooks()
+displayBooks(myLibrary)
 
 // UNDER CONSTRUCTION
 // card slider functionality
