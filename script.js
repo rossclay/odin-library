@@ -79,14 +79,19 @@ bookModal.addEventListener('click', e => {
 const book1 = new Book('No Country For Old Men', 'Cormac McCarthy', 309, 'Read')
 const book2 = new Book('A Clockwork Orange', 'Anthony Burgess', 192, 'Read')
 const book3 = new Book('On The Road', 'Jack Kerouac', 307, 'Not Read')
+const book4 = new Book('The Catcher in the Rye', 'J.D. Salinger', 277, 'Read')
+const book5 = new Book('In Cold Blood', 'Truman Capote', 343, 'Read')
+const book6 = new Book('The Day of The Jackal', 'Frederick Forsyth', 358, 'Read')
 
 addBookToLibrary(book1)
 addBookToLibrary(book2)
 addBookToLibrary(book3)
+addBookToLibrary(book4)
+addBookToLibrary(book5)
+addBookToLibrary(book6)
+
 
 let cardContainer = document.querySelector('.card-container')
-
-
 
 // display all of the books in myLibrary
 function displayBooks(myLibrary) {
