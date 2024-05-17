@@ -6,21 +6,90 @@
     --card-shadow: 2px 2px 2px rgb(185, 185, 185);
     --card-background-color: white;
     --card-padding: 24px;
+    --half-card-padding: 12px;
+    --button-background-color: #e5e5e5;
+    --button-color: black;
+    --header-background-color: #2196F3;
+    --header-color: white;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    font-size: 1.75rem;
+    font-weight: bold;
+    min-height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--card-padding);
+    padding: var(--card-padding);
+    background-color: var(--header-background-color);
+    color: var(--header-color);
+}
+
+.library-icon {
+    filter: invert(98%) sepia(2%) saturate(7%) hue-rotate(264deg) brightness(114%) contrast(100%);
+    max-width: 40px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--half-card-padding);
+    padding: var(--half-card-padding);
+}
+
+
+.add-book-btn {
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: var(--half-card-padding);
+
 }
 
 .card-container {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: var(--card-padding);
+    padding: var(--card-padding)
 }
 
 .card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: var(--card-background-color);
     border-radius: var(--card-border-radius);
     box-shadow: var(--card-shadow);
-    padding: var(--card-padding);
+    padding-top: var(--half-card-padding);
+    padding-left: var(--card-padding);
+    padding-right: var(--card-padding);
+    padding-bottom: var(--card-padding);
+    border: solid 1px;
+    gap: 12px;
 }
 
+.book-title {
+    font-size: 1.5rem;
+}
+
+.del-btn {
+    max-width: fit-content;
+    align-self: flex-end;
+}
 
 /* toggle switch from w3schools:https://www.w3schools.com/howto/howto_css_switch.asp */
 /* The switch - the box around the slider */
@@ -84,4 +153,11 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
