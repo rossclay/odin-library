@@ -89,6 +89,13 @@ header {
 .del-btn {
     max-width: fit-content;
     align-self: flex-end;
+    font-weight: bold;
+}
+
+.book-read {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* toggle switch from w3schools:https://www.w3schools.com/howto/howto_css_switch.asp */
@@ -153,6 +160,29 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--half-card-padding);
+    min-width: 50vw;
+    min-height: 50vh;
+}
+
+.form-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--half-card-padding);
+}
+
+.book-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: fit-content;
 }
 
 
