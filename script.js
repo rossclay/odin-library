@@ -97,7 +97,7 @@ let cardContainer = document.querySelector('.card-container')
 function displayBooks(myLibrary) {
     myLibrary.forEach(
         (book) => {
-            // delete button functionalityeasy enough
+            // delete button functionality. easy enough
             let index = myLibrary.indexOf(book)
             let delBtn = document.createElement('button')
             delBtn.setAttribute('class', 'del-btn')
@@ -135,29 +135,31 @@ function displayBooks(myLibrary) {
             let readSlider = document.createElement('span')
             readSlider.setAttribute('class', 'slider round')
             // now to determine whether or not the book has been read based on the user input
-            let readStatus = book.read
-            if (readStatus === 'Read') {
+
+            if (book.read === 'Read') {
                 readCheckBox.checked = true
             }
-            else if (readStatus === 'Not Read') {
+            else if (book.read === 'Not Read') {
                 readCheckBox.checked = false
             }
-            // slider switch functionality WAAAAY UNDER CONSTRUCTION
-            readSwitch.addEventListener('click', () => {
-                if (readStatus === 'Not Read') {
-                    readCheckBox.checked = true;
-                    readStatus = 'Read'
-                    bookReadText.textContent = readStatus;
-                    console.log(`read, ${readCheckBox.classList}, ${readStatus}`)
+            // slider switch functionality
+            function changeReadStatus() {
+                if (book.read === 'Read') {
+                    readCheckBox.checked = false
+                    book.read = 'Not Read';
+                    bookReadText.textContent = book.read;
+                    return book.read
+                }
+                else {
+                    readCheckBox.checked = true
+                    book.read = 'Read'
+                    bookReadText.textContent = book.read;
+                    return book.read
+                }
+            }
+            readCheckBox.addEventListener('click', () => {
+                changeReadStatus()
 
-                }
-                else if (readStatus === 'Read') {
-                    readCheckBox.checked = false;
-                    readStatus = 'Not Read';
-                    bookReadText.textContent = readStatus;
-                    console.log(`not read, ${readCheckBox.classList}, ${readStatus}`)
-                }
-                else console.log('fail!!!!')
             })
             //append children as needed 
             bookCard.appendChild(delBtn)
