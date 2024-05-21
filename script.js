@@ -135,12 +135,30 @@ function displayBooks(myLibrary) {
             let readSlider = document.createElement('span')
             readSlider.setAttribute('class', 'slider round')
             // now to determine whether or not the book has been read based on the user input
-            if (book.read === 'Read') {
-                readSwitch.checked = true
+            let readStatus = book.read
+            if (readStatus === 'Read') {
+                readCheckBox.checked = true
             }
-            else if (book.read === 'Not Read') {
-                readSwitch.checked = false
+            else if (readStatus === 'Not Read') {
+                readCheckBox.checked = false
             }
+            // slider switch functionality WAAAAY UNDER CONSTRUCTION
+            readSwitch.addEventListener('click', () => {
+                if (readStatus === 'Not Read') {
+                    readCheckBox.checked = true;
+                    readStatus = 'Read'
+                    bookReadText.textContent = readStatus;
+                    console.log(`read, ${readCheckBox.classList}, ${readStatus}`)
+
+                }
+                else if (readStatus === 'Read') {
+                    readCheckBox.checked = false;
+                    readStatus = 'Not Read';
+                    bookReadText.textContent = readStatus;
+                    console.log(`not read, ${readCheckBox.classList}, ${readStatus}`)
+                }
+                else console.log('fail!!!!')
+            })
             //append children as needed 
             bookCard.appendChild(delBtn)
             bookCard.appendChild(bookTitle)
@@ -160,22 +178,3 @@ function displayBooks(myLibrary) {
 
 // populate the page with our default books
 displayBooks(myLibrary)
-
-// UNDER CONSTRUCTION
-// card slider functionality
-let bookReadSliders = document.querySelectorAll('.book-read-slider')
-bookReadSliders.forEach((bookReadSlider) => {
-    bookReadSlider.addEventListener('click', () => {
-        let bookReadTexts = document.querySelectorAll('.book-read-text')
-        bookReadTexts.forEach((bookReadText) => {
-            if (bookReadText.textContent === 'Not Read') {
-                bookReadText.textContent = 'Read'
-            }
-            else {
-                bookReadText.textContent = 'Not Read'
-            }
-        })
-    }
-    )
-}
-)
