@@ -11,15 +11,17 @@
 </head>
 
 <body>
-    <header>
-        <div class="title"><img src="./svg/book-open-page-variant.svg" alt="Library icon" class="library-icon">
-            <div>My Library</div>
-        </div>
-        <button class="add-book-btn" type="button">Add Book</button>
-    </header>
-    <div class="card-container">
-        <!-- BOOK CARD STRUCTURE. INCLUDED FOR REFERENCE ONLY -->
-        <!-- <div class="card">
+    <div id="page-container">
+        <header>
+            <div class="title"><img src="./svg/book-open-page-variant.svg" alt="Library icon" class="library-icon">
+                <div>My Library</div>
+            </div>
+            <button class="add-book-btn" type="button">Add Book</button>
+        </header>
+
+        <div class="card-container">
+            <!-- BOOK CARD STRUCTURE. INCLUDED FOR REFERENCE ONLY -->
+            <!-- <div class="card">
             <button class="del-btn" type="button">X</button>
             <div class="book-title">Example Title</div>
             <div class="book-author">Example Author</div>
@@ -33,34 +35,40 @@
             </div>
         </div> -->
 
+        </div>
+
+        <dialog class='book-modal'>
+            <fieldset>
+                <legend>Book Information</legend>
+                <div class="form-item">
+                    <label for="book-title">Book Title *</label>
+                    <input type="text" id="book-title" name="book-title" placeholder="Moby Dick" required>
+                </div>
+                <div class="form-item">
+                    <label for="book-author">Author *</label>
+                    <input type="text" id="book-author" name="book-author" placeholder="Herman Melville" required>
+                </div>
+                <div class="form-item">
+                    <label for="book-pages"># Of Pages</label>
+                    <input type="tel" id="book-pages" name="book-pages" placeholder="635">
+                </div>
+                <div class="form-item">
+                    <legend>Read?</legend>
+                    <input id='read' name='read' type='radio' value='Read' />
+                    <label for='read' class='radio-label'>Read</label>
+                    <input id='unread' name='read' type='radio' value='Not Read' checked />
+                    <label for='unread' class='radio-label'>Not Read</label>
+                </div>
+                <button class="submit-modal-btn" type="button">Add</button>
+                <button class="close-modal" type="button">Close</button>
+        </dialog>
+        </fieldset>
+        <footer>rossclay<a href="https://github.com/rossclay"><ion-icon name="logo-github"
+                    class="github-logo"></ion-icon>
+        </footer>
     </div>
-    <dialog class='book-modal'>
-        <fieldset>
-            <legend>Book Information</legend>
-            <div class="form-item">
-                <label for="book-title">Book Title *</label>
-                <input type="text" id="book-title" name="book-title" placeholder="Moby Dick" required>
-            </div>
-            <div class="form-item">
-                <label for="book-author">Author *</label>
-                <input type="text" id="book-author" name="book-author" placeholder="Herman Melville" required>
-            </div>
-            <div class="form-item">
-                <label for="book-pages"># Of Pages</label>
-                <input type="tel" id="book-pages" name="book-pages" placeholder="635">
-            </div>
-            <div class="form-item">
-                <legend>Read?</legend>
-                <input id='read' name='read' type='radio' value='Read' />
-                <label for='read' class='radio-label'>Read</label>
-                <input id='unread' name='read' type='radio' value='Not Read' checked />
-                <label for='unread' class='radio-label'>Not Read</label>
-            </div>
-            <button class="submit-modal-btn" type="button">Add</button>
-            <button class="close-modal" type="button">Close</button>
-    </dialog>
-    </fieldset>
-    <footer>Ross Clay via The Odin Project</footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
