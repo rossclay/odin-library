@@ -13,9 +13,10 @@
     --header-color: white;
 }
 
-.body {
+body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 header {
@@ -64,7 +65,8 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: var(--card-padding);
-    padding: var(--card-padding)
+    padding: var(--card-padding);
+    padding-bottom: 2rem;
 }
 
 .card {
@@ -165,8 +167,10 @@ input:checked+.slider:before {
 fieldset {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     gap: var(--half-card-padding);
+    border: none;
 }
 
 .form-item {
@@ -177,18 +181,41 @@ fieldset {
 }
 
 .book-modal {
-    width: 300px;
-    height: 300px;
+    width: 20vw;
+    height: fit-content;
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -150px;
     margin-top: -150px;
+    padding: 20px;
 }
 
+legend {
+    text-align: center;
+    padding: 16px;
+}
 
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.github-logo {
+    font-size: 3rem;
+    margin-left: 1rem;
+    transition: transform 1s;
+}
+
+a {
+    color: inherit;
+}
+
+.github-logo:hover {
+    transform: rotate(1turn);
 }
