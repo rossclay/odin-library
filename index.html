@@ -40,17 +40,18 @@
         <dialog class='book-modal'>
             <fieldset>
                 <legend>Book Information</legend>
+                <div class="form-container">
                 <div class="form-item">
-                    <label for="book-title">Book Title *</label>
+                    <label for="book-title">Book Title <span aria-label="required">*</span></label>
                     <input type="text" id="book-title" name="book-title" placeholder="Moby Dick" required>
                 </div>
                 <div class="form-item">
-                    <label for="book-author">Author *</label>
-                    <input type="text" id="book-author" name="book-author" placeholder="Herman Melville" required>
+                    <label for="book-author">Author <span aria-label="required">*</span></label>
+                    <input type="text" id="book-author" name="book-author" placeholder="Herman Melville" type="text"required>
                 </div>
                 <div class="form-item">
-                    <label for="book-pages"># Of Pages</label>
-                    <input type="tel" id="book-pages" name="book-pages" placeholder="635">
+                    <label for="book-pages"># Of Pages <span aria-label="required">*</span></label>
+                    <input type="tel" id="book-pages" name="book-pages" placeholder="635" min="1" required>
                 </div>
                 <div class="form-item">
                     <legend>Read?</legend>
@@ -59,6 +60,7 @@
                     <input id='unread' name='read' type='radio' value='Not Read' checked />
                     <label for='unread' class='radio-label'>Not Read</label>
                 </div>
+            </div>
                 <button class="submit-modal-btn" type="button">Add</button>
                 <button class="close-modal" type="button">Close</button>
         </dialog>
