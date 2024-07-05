@@ -1,221 +1,260 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Roboto;
-    --card-border-radius: 4px;
-    --card-shadow: 2px 2px 2px rgb(185, 185, 185);
-    --card-background-color: white;
-    --card-padding: 24px;
-    --half-card-padding: 12px;
-    --button-background-color: #e5e5e5;
-    --button-color: black;
-    --header-background-color: #2196F3;
-    --header-color: white;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  --card-border-radius: 4px;
+  --card-shadow: 2px 2px 2px rgb(185, 185, 185);
+  --card-background-color: white;
+  --card-padding: 24px;
+  --half-card-padding: 12px;
+  --button-background-color: #e5e5e5;
+  --button-color: black;
+  --header-background-color: #2196f3;
+  --header-color: white;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-    font-size: 1.75rem;
-    font-weight: bold;
-    min-height: 5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--card-padding);
-    padding: var(--card-padding);
-    background-color: var(--header-background-color);
-    color: var(--header-color);
+  font-size: 1.75rem;
+  font-weight: bold;
+  min-height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--card-padding);
+  padding: var(--card-padding);
+  background-color: var(--header-background-color);
+  color: var(--header-color);
 }
 
 .library-icon {
-    filter: invert(98%) sepia(2%) saturate(7%) hue-rotate(264deg) brightness(114%) contrast(100%);
-    max-width: 40px;
+  filter: invert(98%) sepia(2%) saturate(7%) hue-rotate(264deg) brightness(114%)
+    contrast(100%);
+  max-width: 40px;
 }
 
 .title {
-    display: flex;
-    flex-direction: row;
-    max-width: fit-content;
-    white-space: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--half-card-padding);
-    padding: var(--half-card-padding);
+  display: flex;
+  flex-direction: row;
+  max-width: fit-content;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--half-card-padding);
+  padding: var(--half-card-padding);
 }
 
-
 .add-book-btn {
-    color: var(--button-color);
-    background-color: var(--button-background-color);
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    padding: var(--half-card-padding);
-
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  padding: var(--half-card-padding);
 }
 
 .card-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: var(--card-padding);
-    padding: var(--card-padding);
-    padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: var(--card-padding);
+  padding: var(--card-padding);
+  padding-bottom: 2rem;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--card-background-color);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--card-shadow);
-    padding-top: var(--half-card-padding);
-    padding-left: var(--card-padding);
-    padding-right: var(--card-padding);
-    padding-bottom: var(--card-padding);
-    border: solid 1px;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--card-background-color);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  padding-top: var(--half-card-padding);
+  padding-left: var(--card-padding);
+  padding-right: var(--card-padding);
+  padding-bottom: var(--card-padding);
+  border: solid 1px;
+  gap: 12px;
 }
 
 .book-title {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .del-btn {
-    max-width: fit-content;
-    align-self: flex-end;
-    font-weight: bold;
+  max-width: fit-content;
+  align-self: flex-end;
+  font-weight: bold;
 }
 
 .book-read {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* toggle switch from w3schools:https://www.w3schools.com/howto/howto_css_switch.asp */
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* The slider */
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-input:checked+.slider {
-    background-color: #2196F3;
+input:checked + .slider {
+  background-color: #2196f3;
 }
 
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
+}
+
+input {
+  background-color: #ffffff;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+}
+
+input[type="text"]:invalid,
+input[type="tel"]:invalid {
+  border: 1px solid #d55c5f;
+  box-shadow: none;
+  /* Remove default red glow in Firefox */
+}
+
+input:focus,
+input:invalid:focus {
+  outline: none;
+  border: 1px solid #4f89d4;
+}
+
+input[type="text"]:valid,
+input[type="tel"]:valid {
+  border: 1px solid green;
 }
 
 fieldset {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--half-card-padding);
-    border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--half-card-padding);
+  border: none;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .form-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--half-card-padding);
+  display: flex;
+  text-wrap: nowrap;
+  align-items: center;
+  align-self: flex-end;
+  justify-content: flex-start;
+  gap: var(--half-card-padding);
 }
 
 .book-modal {
-    width: 20vw;
-    height: fit-content;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -150px;
-    margin-top: -150px;
-    padding: 20px;
+  width: 25vw;
+  height: fit-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  padding: 20px;
+}
+
+.submit-modal-btn,
+.close-modal {
+  padding: 4px;
 }
 
 legend {
-    text-align: center;
-    padding: 16px;
+  text-align: center;
+  padding: 16px;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
 }
 
 .github-logo {
-    font-size: 3rem;
-    margin-left: 1rem;
-    transition: transform 1s;
+  font-size: 3rem;
+  margin-left: 1rem;
+  transition: transform 1s;
 }
 
 a {
-    color: inherit;
+  color: inherit;
 }
 
 .github-logo:hover {
-    transform: rotate(1turn);
+  transform: rotate(1turn);
 }
