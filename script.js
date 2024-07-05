@@ -31,7 +31,6 @@ function spliceMyLibrary(object, num) {
     };
 }
 
-
 // allow the user to add books
 const addBookBtn = document.querySelector('.add-book-btn')
 const closeBtn = document.querySelector('.close-modal')
@@ -180,3 +179,21 @@ function displayBooks(myLibrary) {
 
 // populate the page with our default books
 displayBooks(myLibrary)
+
+
+// form validation
+const title = document.getElementById("book-title");
+const author = document.getElementById('book-author');
+const pages = document.getElementById('book-pages')
+
+const validator = function (subject){
+    if (subject.validity.typeMismatch){
+        subject.setCustomValidity(`I'm expecting a ${subject}!`)
+    }else{
+        subject.setCustomValidity('')
+    }
+}
+
+title.addEventListener('input', validator(title))
+author.addEventListener('input',validator(author))
+pages.addEventListener('input',validator(pages))
