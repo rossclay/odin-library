@@ -182,9 +182,9 @@ displayBooks(myLibrary)
 
 
 // form validation
-const title = document.getElementById("book-title");
+const title = document.getElementById('book-title');
 const author = document.getElementById('book-author');
-const pages = document.getElementById('book-pages')
+const pages = document.getElementById('book-pages');
 
 const validator = function (subject){
     if (subject.validity.typeMismatch){
